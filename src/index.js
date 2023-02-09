@@ -15,7 +15,7 @@ function fetchAndRenderTools() {
                     const clickedImage = event.target;
                     const bigImage = document.getElementsByClassName("detail-image");
                     bigImage[0].src = clickedImage.src
-                    // bigImage[0].id = eachToolObject.id
+                    bigImage[0].name = eachToolObject.id
                     const bigName = document.getElementsByClassName("name");
                     bigName[0].innerText = eachToolObject.name
                     const toolAvailability = document.getElementsByClassName("status");
@@ -23,21 +23,18 @@ function fetchAndRenderTools() {
                   })
                   toolCollectionDiv.append(toolImage)
               })
-            const centerImage = document.getElementById("center-image")
-            // centerImage.addEventListener("mouseover", function() {
-            //   const imgId = centerImage.id
-            //   const adjustedImgId = imgId - 1
-            //   const description = arrayOfToolObjects[adjustedImgId].useDescription
-            // })
-
-            // centerImage.addEventListener("mouseout", function() {
-            //   //console.log("goodbye")
-            // })
-
+            
+const centerImage = document.getElementById("center-image")
+centerImage.addEventListener("mouseover", function() {
+      if (+centerImage.name > 0) {
+              console.log("Hello") }
+            })
+centerImage.addEventListener("mouseout", function() {
+      if (+centerImage.name > 0) {
+                console.log("Goodbye") }
+            })
             })
             }
-
-const centerImageDiv = document.getElementById("tool-detail")
 
 const submitForm = document.getElementById("new-tool");  
   submitForm.addEventListener("submit", function(e) {
