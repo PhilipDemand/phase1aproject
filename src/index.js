@@ -1,4 +1,3 @@
-const objData = []
 fetchAndRenderTools()
 
 function fetchAndRenderTools() {
@@ -22,13 +21,19 @@ function fetchAndRenderTools() {
                     const toolAvailability = document.getElementsByClassName("status");
                     toolAvailability[0].innerText = eachToolObject.availability
                   })
+
                   toolCollectionDiv.append(toolImage)
               })
-            
+ 
+
+
 const centerImage = document.getElementById("center-image")
 centerImage.addEventListener("mouseover", function() {
       if (+centerImage.name > 0) {
-              console.log("Hello") }
+              const iNumber = +centerImage.name - 1
+              const targetDescription = arrayOfToolObjects[iNumber].useDescription
+              console.log(targetDescription)
+             }
             })
 centerImage.addEventListener("mouseout", function() {
       if (+centerImage.name > 0) {
