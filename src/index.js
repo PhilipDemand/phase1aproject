@@ -6,6 +6,7 @@ function fetchAndRenderTools() {
         .then( (someData) => {
             const arrayOfToolObjects = someData
             const toolCollectionDiv = document.querySelector("#tool-menu")
+            toolCollectionDiv.innerHTML = ""
             arrayOfToolObjects.map(  
                 (eachToolObject)=>{
                   const toolImage = document.createElement("img")
@@ -28,11 +29,13 @@ function fetchAndRenderTools() {
 
 
 const centerImage = document.getElementById("center-image")
+
+
 centerImage.addEventListener("mouseover", function() {
       if (+centerImage.name > 0) {
               const iNumber = +centerImage.name - 1
               const targetDescription = arrayOfToolObjects[iNumber].useDescription
-              console.log(targetDescription)
+              //console.log(targetDescription)
              }
             })
 centerImage.addEventListener("mouseout", function() {
@@ -64,3 +67,25 @@ const submitForm = document.getElementById("new-tool");
     .then(response => response.json())
     .then( () => fetchAndRenderTools())
   })
+
+//   const newCenterImage = document.getElementById("center-image")
+//   const reserveButton = document.getElementById("reserveToolButton")
+//   reserveButton.addEventListener("click", function() {
+//     //if (+newCenterImage.name > 0) {
+//       const urlNumber = +newCenterImage.name
+//       fetch(`http://localhost:3000/tools/${urlNumber}`, {
+//         method: 'PATCH',
+//         headers: {
+//         'Content-Type': 'application/json'
+//       },
+//         body: JSON.stringify({
+//           availability: 'Reserved'
+//       })
+//     })
+//       .then(response => response.json())
+//       .then( () => fetchAndRenderTools())
+//       .catch(error => console.error(error));
+      
+//  //   }
+//   }
+//   )
