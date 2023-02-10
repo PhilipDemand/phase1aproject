@@ -22,7 +22,6 @@ function fetchAndRenderTools() {
                     const toolAvailability = document.getElementsByClassName("status");
                     toolAvailability[0].innerText = eachToolObject.availability
                   })
-
                   toolCollectionDiv.append(toolImage)
               })
  
