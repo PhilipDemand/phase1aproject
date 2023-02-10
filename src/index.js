@@ -1,3 +1,4 @@
+const objData = []
 fetchAndRenderTools()
 
 function fetchAndRenderTools() {
@@ -34,7 +35,7 @@ centerImage.addEventListener("mouseout", function() {
                 console.log("Goodbye") }
             })
             })
-            }
+          }
 
 const submitForm = document.getElementById("new-tool");  
   submitForm.addEventListener("submit", function(e) {
